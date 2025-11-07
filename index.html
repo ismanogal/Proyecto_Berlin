@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Juego remoto (demo)</title>
+<style>
+body { font-family: monospace; background:#111; color:#eee; padding:10px; }
+#out { width:100%; height:60vh; background:#000; padding:10px; overflow:auto; border:1px solid #333; }
+#input { width:80%; }
+button { padding:6px 10px; }
+.row { margin-top:8px; }
+.line { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h3>Juego remoto (demo)</h3>
+<div id="out"></div>
+<div class="row">
+  <input id="input" placeholder="Escribe aquí..." autofocus />
+  <button id="send">Enviar</button>
+</div>
+
+<script>
+const out = document.getElementById('out');
+const input = document.getElementById('input');
+const send = document.getElementById('send');
+
+function log(msg){
+  const d = document.createElement('div');
+  d.className = 'line';
+  d.textContent = msg;
+  out.appendChild(d);
+  out.scrollTop = out.scrollHeight;
+}
+
+const proto = (location.protocol === 'https:') ? 'wss:' : 'ws:';
+const wsUrl = proto + '//' + location.host + '/ws';
+const ws = new WebSocket(wsUrl);
+
+ws.onopen = () => log('[conectado]');
+ws.onmessage = (e) => log(e.data);
+ws.onclose = () => log('[desconectado]');
+
+function sendInput(){
+  const v = input.value.trim();
+  if(!v) return;
+  ws.send(v);
+  input.value = '';
+}
+
+send.addEventListener('click', sendInput);
+input.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter') sendInput();
+});
+</script>
+</body>
+</html>
