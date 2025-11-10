@@ -44,7 +44,6 @@ string IntroAndNamePlayer()
         else
         {
             cout << "Se nos conoce por muchos nombres " << name_player << ", asegurate de escribir tu nombre sin tildes." << endl;
-            sleep(3);
             cout << "Inténtalo de nuevo." << endl;
         }
 
@@ -53,14 +52,10 @@ string IntroAndNamePlayer()
 
     cout << endl;
     cout << "Bueno, bueno, bueno..." << endl;
-    sleep(2);
     cout << "Parece que tenemos ante nosotros al verdadero Potrillo!!!" << endl;
-    sleep(3);
     cout << "Mucho me han hablado de ti." << endl;
-    sleep(2);
     cout << endl;
     cout << "Todo juego necesita un héroe, tu momento ha llegado jugador!" << endl;
-    sleep(2);
 
     return name_player;
 }
@@ -68,7 +63,6 @@ string IntroAndNamePlayer()
 void IntroducePassword()
 {
     cout << "Para asegurarme de que tengo ante mí al legítimo jugador de este juego necesito una última comprobación." << endl;
-    sleep(3);
     cout << "Dime el nombre del grupo de tus amigos del instituto: ";
 
     for (size_t i { 0 }; i <= 2; i++)
@@ -80,17 +74,11 @@ void IntroducePassword()
         {
             cout << "jajajsjdsksajdskadjjajajdaidkjjaja" << endl;
             cout << first_password << endl;
-            sleep(2);
             cout << "Lo sé, el nombre es lamentable, pero son tus amigos y hay que quererlos." << endl;
-            sleep(2);
             cout << "Ahora sí, en... ";
-            sleep(1);
             cout << "3, ";
-            sleep(1);
             cout << "2, ";
-            sleep(1);
             cout << "1... ";
-            sleep(1);
             cout << "empieza..." << endl <<endl;
 
             cout << "================ EL JUEGO DE LA CARTA ================" << endl << endl;
