@@ -63,10 +63,10 @@ string IntroAndNamePlayer()
 void IntroducePassword()
 {
     cout << "Para asegurarme de que tengo ante mí al legítimo jugador de este juego necesito una última comprobación." << endl;
-    cout << "Dime el nombre del grupo de tus amigos del instituto: ";
 
     for (size_t i { 0 }; i <= 2; i++)
     {
+        cout << "Dime el nombre del grupo de tus amigos del instituto: ";
         string first_password;
         getline(cin, first_password);
 
