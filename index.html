@@ -74,10 +74,10 @@
   </style>
 </head>
 <body>
-  <h3>Juego remoto (demo)</h3>
+  <h3>EL JUEGO DE LA CARTA</h3>
   <div id="out"></div>
   <div class="row">
-    <input id="input" placeholder="Escribe aquí..." autofocus />
+    <input id="input" placeholder="Escribe aquí perro..." autofocus />
     <button id="send">Enviar</button>
   </div>
 
@@ -98,7 +98,7 @@
     const wsUrl = proto + '//' + location.host + '/ws';
     const ws = new WebSocket(wsUrl);
 
-    ws.onopen = () => log('[Conectado]');
+    ws.onopen = () => log('[Conectado jefe]');
     ws.onmessage = (e) => log(e.data);
     ws.onclose = () => log('[Desconectado]');
 
