@@ -44,6 +44,7 @@ string IntroAndNamePlayer()
         else
         {
             cout << "Se nos conoce por muchos nombres " << name_player << ", asegurate de escribir tu nombre sin tildes." << endl;
+            sleep(1);
             cout << "Inténtalo de nuevo." << endl;
         }
 
@@ -52,34 +53,46 @@ string IntroAndNamePlayer()
 
     cout << endl;
     cout << "Bueno, bueno, bueno..." << endl;
+    sleep(1);
     cout << "Parece que tenemos ante nosotros al verdadero Potrillo!!!" << endl;
+    sleep(1);
     cout << "Mucho me han hablado de ti." << endl;
+    sleep(1);
     cout << endl;
     cout << "Todo juego necesita un héroe, tu momento ha llegado jugador!" << endl;
+    sleep(1);
 
     return name_player;
 }
 
 void IntroducePassword()
 {
-    cout << "Para asegurarme de que tengo ante mí al legítimo jugador de este juego necesito una última comprobación." << endl;
+    cout << "Para asegurarme de que tengo ante mí al legítimo jugador de este juego necesito una última comprobación. Dime el nombre del grupo de tus amigos del instituto: " << endl;
+    sleep(1);
 
     for (size_t i { 0 }; i <= 2; i++)
     {
-        cout << "Dime el nombre del grupo de tus amigos del instituto: ";
         string first_password;
         getline(cin, first_password);
 
         if (first_password == "Coc(keros) y permanente")
         {
             cout << "jajajsjdsksajdskadjjajajdaidkjjaja" << endl;
+            sleep(1);
             cout << first_password << endl;
+            sleep(1);
             cout << "Lo sé, el nombre es lamentable, pero son tus amigos y hay que quererlos." << endl;
+            sleep(1);
             cout << "Ahora sí, en... ";
+            sleep(1);
             cout << "3, ";
+            sleep(1);
             cout << "2, ";
+            sleep(1);
             cout << "1... ";
+            sleep(1);
             cout << "empieza..." << endl <<endl;
+            sleep(1);
 
             cout << "================ EL JUEGO DE LA CARTA ================" << endl << endl;
             break;
