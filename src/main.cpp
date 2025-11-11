@@ -14,12 +14,20 @@ void IntroducePassword();
 
 void DevelopementInProgress(string name_player);
 
+void DisplayMenu();
+
+char GetUserSelection();
+
+void FromMenuToAdventure();
+
 int main(){
-    string name_player = IntroAndNamePlayer();
+    // string name_player = IntroAndNamePlayer();
 
-    IntroducePassword();
+    // IntroducePassword();
 
-    DevelopementInProgress(name_player);
+    // DevelopementInProgress(name_player);
+
+    FromMenuToAdventure();
 
     return 0;
 }
@@ -116,4 +124,58 @@ void DevelopementInProgress(string name_player)
     cout << "A medida que el tiempo pase, nuevas pistas y rompecabezas se desbloquearán." << endl;
     sleep(2);
     cout << "Ya queda menos para resolver el misterio que esconde EL JUEGO DE LA CARTA :)" <<endl;
+}
+
+void DisplayMenu()
+{
+    std::cout << "\n¿Qué aventura o misión tienes el valor de desbloquear?:" << std::endl;
+    std::cout << "I - Información relevante" << std::endl;
+    std::cout << "A - Constancia" << std::endl; // Empezar con las imágenes y acabar dando el texto encriptado escrito
+    std::cout << "B - Orientación" << std::endl; // Acabar dando la clave: TITANV
+    std::cout << "C - Repetición" << std::endl; // Acabar dando el algoritmo y las instrucciones finales
+    std::cout << "Q - Salir del juego" << std::endl;    
+}
+
+char GetUserSelection()
+{
+    char selection;
+    std::cout << "\nEscribe tu elección: ";
+    cin >> selection;
+
+    selection = toupper(static_cast<unsigned char>(selection));
+    return selection;
+}
+
+void FromMenuToAdventure()
+{
+    char selection;
+
+    do
+    {
+        DisplayMenu();
+        selection = GetUserSelection();
+
+        switch (selection)
+        {
+        case 'I':
+            std::cout << "Información relevante ha sido selecionada" << std::endl;
+            break;
+        case 'A':
+            std::cout << "La CONSTANCIA no busca el camino más corto, sino el que siempre llega." << std::endl;
+            break;
+        case 'B':
+            std::cout << "Allá vamos con el arte de no perderse incluso sin saber el destino, la ORIENTACIÓN." << std::endl;
+            break;
+        case 'C':
+            std::cout << "Has seleccionado REPETICIÓN, el pulso con que la razón da forma al caos." << std::endl;
+            break;
+        case 'Q':
+            std::cout << "Saliste de EL JUEGO DE LA CARTA. Hasta pronto vaquero :)" << std::endl;
+            break;
+        
+        default:
+            std::cout << "Me da a mí que no das pie con bola, hazme el favor de poner una de las opciones permitidas pedazo de bobi..." << std::endl;
+            break;
+        }
+    } while (selection != 'Q');
 }
