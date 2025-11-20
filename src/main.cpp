@@ -119,6 +119,7 @@ void IntroducePassword(string name_player)
 
 void DevelopementInProgress(string name_player)
 {
+    sleep(1);
     cout << "\n===============================================================================" << endl;
     cout << "Querido " << name_player << ". Por el momento esta es la parte del juego disponible." << endl;
     cout << "A medida que el tiempo pase, nuevas pistas y rompecabezas se desbloquearán." << endl;
@@ -128,6 +129,7 @@ void DevelopementInProgress(string name_player)
 
 void DisplayMenu()
 {
+    sleep(1);
     cout << "\n¿Qué aventura o misión tienes el valor de desbloquear?:" << endl;
     cout << "I - Información relevante" << endl;
     cout << "C - Constancia" << endl; // Empezar con las imágenes y acabar dando el texto encriptado escrito
@@ -138,8 +140,9 @@ void DisplayMenu()
 
 char GetUserSelection()
 {
+    sleep(1);
     char selection;
-    cout << "\nEscribe tu elección: ";
+    cout << "\nEscribe tu elección: " << endl;
     cin >> selection;
 
     selection = toupper(static_cast<unsigned char>(selection));
@@ -172,10 +175,12 @@ void FromMenuToAdventure(string name_player)
             Repeticion(name_player);
             break;
         case 'Q':
+            sleep(1);
             cout << "\nSaliste de EL JUEGO DE LA CARTA. Hasta pronto vaquero :)" << endl;
             break;
         
         default:
+            sleep(1);
             cout << "Me da a mí que no das pie con bola, hazme el favor de poner una de las opciones permitidas pedazo de bobi..." << endl;
             break;
         }
@@ -184,17 +189,23 @@ void FromMenuToAdventure(string name_player)
 
 void InformacionRelevante(string name_player)
 {
-    cout << "Información relevante ha sido selecionada:" << endl;
-    cout << "\nBasta ya de misterios, el juego ha comenzado y es necesario dejar ciertas cosas claras." << endl;
+    sleep(1);
+    cout << "\n================Información relevante ha sido selecionada================" << endl;
+    sleep(1);
+    cout << "Basta ya de misterios, el juego ha comenzado y es necesario dejar ciertas cosas claras." << endl;
+    sleep(1);
     cout << "Con motivo de tu cumpleaños y tu visita a la nación que te vio crecer, un de tus amigos, uno ciertamente extraño, te entregó una carta encriptada." << endl;
     cout << "Además esta carta venía acompañada de dos fotografías." << endl;
+    sleep(2);
     cout << "El objetivo de este juego, del cual tú eres su jugador, es resolver todos los misterios que rodean a la carta y acabar desvelando su contenido." << endl;
+    sleep(2);
     cout << "\nLa aventura continúa " << name_player << ", vayamos de vuelta al menú principal." << endl;
 }
 
 void Historia(string name_player)
 {
-    cout << "La historia vive en quien la recuerda y la comparte." << endl;
+    sleep(1);
+    cout << "\nLa historia vive en quien la recuerda y la comparte." << endl;
     // Hacer un relato alegórico que sirva de narrativa para el juego (ideas de chatgpt)
     // Se puede intentar meter la palabra secreta que salga a partir del menú principal (CHOIR)
     DevelopementInProgress(name_player);
@@ -202,14 +213,16 @@ void Historia(string name_player)
 
 void Constancia(string name_player)
 {
-    cout << "La CONSTANCIA no busca el camino más corto, sino el que siempre llega." << endl;
+    sleep(1);
+    cout << "\nLa CONSTANCIA no busca el camino más corto, sino el que siempre llega." << endl;
     // / Empezar con las imágenes y acabar dando el texto encriptado escrito gracias a la ayuda de Holmie14.
     DevelopementInProgress(name_player);
 }
 
 void Orientacion(string name_player)
 {
-    cout << "Allá vamos con el arte de no perderse incluso sin saber el destino, la ORIENTACIÓN." << endl;
+    sleep(1);
+    cout << "\nAllá vamos con el arte de no perderse incluso sin saber el destino, la ORIENTACIÓN." << endl;
     // Acabar dando la clave: TITANV
     // Dar contexto de mi trabajo y de la orientacion que depende de satélites. Estos satélites se lanzan con cohetes que queman combustible
     // aunque nosotros conseguimos hacer uno de agua. Deja que te impulse y oriente, es la clave que buscabas (rollo adivinanza y poetico). 
@@ -218,10 +231,12 @@ void Orientacion(string name_player)
 
 void Repeticion(string name_player)
 {
-    cout << "Has seleccionado REPETICIÓN, el pulso con que la razón da forma al caos." << endl;
+    sleep(1);
+    cout << "\nHas seleccionado REPETICIÓN, el pulso con que la razón da forma al caos." << endl;
     // Mediante esta prueba va a conseguir el archivo con el algoritmo (script de python).
     // Comentar algo de serpientes, sonidos repatitivos e imnóticos.
     // Hacer un laberinto que viaje de menu en menu. Para salir y conseguir el objetivo habrá
     // que replicar de alguna forma la clave que se ha conseguido en la historia.
+    // Relacionar el numero de iteraciones de una repetición con la posición de la letra H (asi desbloquear Historia) 
     DevelopementInProgress(name_player);
 }
